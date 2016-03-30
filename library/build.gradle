@@ -2,6 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'maven'
 apply plugin: 'checkstyle'
 apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'idea'
 
 group = 'com.github.alexfu'
 
@@ -16,6 +17,7 @@ repositories {
 dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-core:3.5.2'
+    testImplementation 'org.xerial:sqlite-jdbc:3.8.11.2'
 }
 
 android {
