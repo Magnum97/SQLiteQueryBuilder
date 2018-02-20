@@ -17,6 +17,14 @@ public class SelectAndBuilder extends SegmentBuilder {
     return new SelectAndBuilder(this, condition);
   }
 
+  public SelectLimitBuilder limit(int limit) {
+    return new SelectLimitBuilder(this, limit);
+  }
+
+  public SelectOrderByBuilder orderBy(String column) {
+    return new SelectOrderByBuilder(this, column);
+  }
+
   @Override
   public String build() {
     return StringUtils.join(" ", prefix.build(), "AND", condition);
