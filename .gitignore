@@ -1,11 +1,10 @@
-# IntelliJ IDEA
-.idea
 *.iml
-
-# Gradle
 .gradle
-build
-/bin/
-*.classpath
-*.project
-*.prefs
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild

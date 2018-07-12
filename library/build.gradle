@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
+apply plugin: 'com.github.kt3k.coveralls'
+
+group = 'com.github.alexfu'
+
+sourceCompatibility = 1.5
+version = '0.3.0'
+
+repositories {
+    jcenter()
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:2.0.0'
+}
+
+checkstyle {
+    toolVersion = '6.7'
+}
