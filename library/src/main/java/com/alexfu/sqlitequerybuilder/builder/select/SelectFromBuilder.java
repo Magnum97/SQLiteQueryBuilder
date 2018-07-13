@@ -1,5 +1,7 @@
-package com.alexfu.sqlitequerybuilder.builder;
+package com.alexfu.sqlitequerybuilder.builder.select;
 
+import com.alexfu.sqlitequerybuilder.builder.JoinType;
+import com.alexfu.sqlitequerybuilder.builder.SegmentBuilder;
 import com.alexfu.sqlitequerybuilder.builder.where.ClauseBuilder;
 import com.alexfu.sqlitequerybuilder.utils.Preconditions;
 import com.alexfu.sqlitequerybuilder.utils.StringUtils;
