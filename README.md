@@ -36,6 +36,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.alexfu:SQLiteQueryBuilder:0.1.1'
+    implementation 'com.github.emmanuelmess:SQLiteQueryBuilder:0.3.0'
 }
 ```
