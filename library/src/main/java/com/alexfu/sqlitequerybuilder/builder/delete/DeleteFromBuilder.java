@@ -1,6 +1,7 @@
 package com.alexfu.sqlitequerybuilder.builder.delete;
 
 import com.alexfu.sqlitequerybuilder.builder.SegmentBuilder;
+import com.alexfu.sqlitequerybuilder.builder.where.ClauseBuilder;
 import com.alexfu.sqlitequerybuilder.utils.Preconditions;
 import com.alexfu.sqlitequerybuilder.utils.StringUtils;
 
@@ -14,7 +15,7 @@ public class DeleteFromBuilder extends SegmentBuilder {
     this.tables = tables;
   }
 
-  public DeleteWhereBuilder where(String condition) {
+  public DeleteWhereBuilder where(ClauseBuilder condition) {
     Preconditions.checkArgument(condition != null, "Condition cannot be null");
     return new DeleteWhereBuilder(this, condition);
   }
