@@ -1,6 +1,5 @@
-apply plugin: 'java'
+apply plugin: 'com.android.library'
 apply plugin: 'maven'
-apply plugin: 'jacoco'
 apply plugin: 'checkstyle'
 apply plugin: 'com.github.kt3k.coveralls'
 
@@ -14,16 +13,25 @@ repositories {
     jcenter()
 }
 
-jacocoTestReport {
-    reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
-    }
-}
-
 dependencies {
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:2.0.0'
+}
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        //consumerProguardFiles 'proguard-rules.txt' TODO use proguard
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 }
 
 checkstyle {
