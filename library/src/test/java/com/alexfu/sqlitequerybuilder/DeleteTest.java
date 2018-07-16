@@ -3,6 +3,7 @@ package com.alexfu.sqlitequerybuilder;
 import com.alexfu.sqlitequerybuilder.api.SQLiteQueryBuilder;
 import org.junit.Test;
 
+import static com.alexfu.sqlitequerybuilder.api.SQLiteClauseBuilder.clause;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -24,7 +25,7 @@ public class DeleteTest {
     String sql = SQLiteQueryBuilder
       .delete()
       .from("my_table")
-      .where("id = 1")
+      .where(clause("id = 1"))
       .build();
 
     assertThat(sql).isEqualTo("DELETE FROM my_table WHERE id = 1");
