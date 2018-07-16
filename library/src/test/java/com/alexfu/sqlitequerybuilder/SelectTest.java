@@ -2,6 +2,7 @@ package com.alexfu.sqlitequerybuilder;
 
 import com.alexfu.sqlitequerybuilder.api.SQLiteQueryBuilder;
 import com.alexfu.sqlitequerybuilder.api.SelectType;
+import com.alexfu.sqlitequerybuilder.builder.select.FunctionType;
 
 import org.junit.Test;
 
@@ -246,6 +247,48 @@ public class SelectTest {
         .build();
 
     assertThat(query).isEqualTo("SELECT * FROM mytable ORDER BY age ASC");
+  }
+
+  @Test
+  public void sumFunctionTest() {
+    String query = SQLiteQueryBuilder.
+        select("column1", "column2")
+        .function(FunctionType.SUM, "column3")
+        .from("mytable")
+        .build();
+
+    assertThat(query).isEqualTo("SELECT column1,column2 SUM(column3) FROM mytable");
+  }
+
+  @Test
+  public void countFunctionTest() {
+    String query = SQLiteQueryBuilder.
+        select("column1", "column2")
+        .function(FunctionType.COUNT)
+        .from("mytable")
+        .build();
+
+    assertThat(query).isEqualTo("SELECT column1,column2 COUNT(*) FROM mytable");
+  }
+
+  @Test
+  public void groupConcatFunctionTest() {
+    String query = SQLiteQueryBuilder.
+        select("column1", "column2")
+        .function(FunctionType.GROUP_CONCATENATION, "column3", "column4")
+        .from("mytable")
+        .build();
+
+    assertThat(query).isEqualTo("SELECT column1,column2 GROUP_CONCAT(column3,column4) FROM mytable");
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void argLengthFunctionTest() {
+    SQLiteQueryBuilder.
+        select("column1", "column2")
+        .function(FunctionType.SUM, "column3", "column4")
+        .from("mytable")
+        .build();
   }
 
   @Test(expected = IllegalArgumentException.class)
