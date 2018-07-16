@@ -8,10 +8,10 @@ import com.alexfu.sqlitequerybuilder.utils.StringUtils;
 
 public class SelectFromBuilder extends SegmentBuilder {
 
-  private SelectBuilder prefix;
+  private SegmentBuilder prefix;
   private String[] tables;
 
-  public SelectFromBuilder(SelectBuilder prefix, String... tables) {
+  public SelectFromBuilder(SegmentBuilder prefix, String... tables) {
     this.prefix = prefix;
     this.tables = tables;
   }
