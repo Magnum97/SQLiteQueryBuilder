@@ -93,12 +93,12 @@ public class CreateTableTest {
 
     String query = SQLiteQueryBuilder
       .create()
-      .temp()
+      .temporary()
       .table("myTable")
       .column(column)
       .build();
 
-    assertThat(query).isEqualTo("CREATE TEMP TABLE myTable(column1 INTEGER PRIMARY KEY)");
+    assertThat(query).isEqualTo("CREATE TEMPORARY TABLE myTable(column1 INTEGER PRIMARY KEY)");
   }
 
   @Test
@@ -107,13 +107,13 @@ public class CreateTableTest {
 
     String query = SQLiteQueryBuilder
       .create()
-      .temp()
+      .temporary()
       .table("myTable")
       .ifNotExists()
       .column(column)
       .build();
 
-    assertThat(query).isEqualTo("CREATE TEMP TABLE IF NOT EXISTS myTable(column1 INTEGER "
+    assertThat(query).isEqualTo("CREATE TEMPORARY TABLE IF NOT EXISTS myTable(column1 INTEGER "
       + "PRIMARY KEY)");
   }
 
