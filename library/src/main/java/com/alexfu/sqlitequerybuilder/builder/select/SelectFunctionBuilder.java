@@ -13,7 +13,7 @@ public class SelectFunctionBuilder extends SegmentBuilder {
 	private FunctionType function;
 	private String[] args;
 
-	public SelectFunctionBuilder(SelectBuilder prefix, FunctionType function, String... args) {
+	SelectFunctionBuilder(SelectBuilder prefix, FunctionType function, String... args) {
 		Preconditions.checkArgument(function.argumentNumber.contains(args.length), "Argument list too long or short!");
 		this.prefix = prefix;
 		this.function = function;

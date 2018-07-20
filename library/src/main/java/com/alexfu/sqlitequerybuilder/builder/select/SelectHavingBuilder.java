@@ -8,7 +8,7 @@ public class SelectHavingBuilder extends SegmentBuilder {
   private SelectGroupByBuilder prefix;
   private String condition;
 
-  public SelectHavingBuilder(SelectGroupByBuilder prefix, String condition) {
+  SelectHavingBuilder(SelectGroupByBuilder prefix, String condition) {
     this.prefix = prefix;
     this.condition = condition;
   }
