@@ -1,15 +1,16 @@
-package com.alexfu.sqlitequerybuilder;
+package com.alexfu.sqlitequerybuilder.testreal;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.alexfu.sqlitequerybuilder.api.ForeignKeyConstraint;
-import com.alexfu.sqlitequerybuilder.utils.ConnectionUtils;
+
 import org.junit.Test;
 
 import com.alexfu.sqlitequerybuilder.api.Column;
 import com.alexfu.sqlitequerybuilder.api.ColumnConstraint;
 import com.alexfu.sqlitequerybuilder.api.ColumnType;
 import com.alexfu.sqlitequerybuilder.api.SQLiteQueryBuilder;
+import com.alexfu.sqlitequerybuilder.testreal.utils.ConnectionUtils;
 
 import java.sql.SQLException;
 import java.util.List;

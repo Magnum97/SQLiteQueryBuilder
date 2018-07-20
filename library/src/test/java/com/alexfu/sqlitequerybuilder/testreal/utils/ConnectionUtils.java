@@ -1,4 +1,4 @@
-package com.alexfu.sqlitequerybuilder.utils;
+package com.alexfu.sqlitequerybuilder.testreal.utils;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
