@@ -1,4 +1,4 @@
-package com.alexfu.sqlitequerybuilder;
+package com.alexfu.sqlitequerybuilder.testtext;
 
 import com.alexfu.sqlitequerybuilder.utils.StringUtils;
 import org.junit.Test;
