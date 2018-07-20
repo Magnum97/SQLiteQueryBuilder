@@ -10,7 +10,7 @@ public class DeleteFromBuilder extends SegmentBuilder {
   private DeleteBuilder prefix;
   private String[] tables;
 
-  public DeleteFromBuilder(DeleteBuilder prefix, String... tables) {
+  DeleteFromBuilder(DeleteBuilder prefix, String... tables) {
     this.prefix = prefix;
     this.tables = tables;
   }

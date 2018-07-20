@@ -7,7 +7,7 @@ public class ClauseOrBuilder extends ClauseBuilder {
 	private ClauseBuilder prefix;
 	private String clause;
 
-	public ClauseOrBuilder(ClauseBuilder prefix, String clause) {
+	ClauseOrBuilder(ClauseBuilder prefix, String clause) {
 		super(clause);
 		this.prefix = prefix;
 		this.clause = clause;

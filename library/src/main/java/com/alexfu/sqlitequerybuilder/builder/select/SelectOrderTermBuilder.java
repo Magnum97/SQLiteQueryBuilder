@@ -12,7 +12,7 @@ public class SelectOrderTermBuilder extends SegmentBuilder {
   private SelectOrderByBuilder prefix;
   private Term term;
 
-  public SelectOrderTermBuilder(SelectOrderByBuilder prefix, Term term) {
+  SelectOrderTermBuilder(SelectOrderByBuilder prefix, Term term) {
     this.prefix = prefix;
     this.term = term;
   }

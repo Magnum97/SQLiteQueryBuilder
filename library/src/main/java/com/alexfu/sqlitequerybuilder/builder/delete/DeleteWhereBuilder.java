@@ -11,7 +11,7 @@ public class DeleteWhereBuilder extends SegmentBuilder {
   private Builder prefix;
   private ClauseBuilder condition;
 
-  public DeleteWhereBuilder(Builder prefix, ClauseBuilder condition) {
+  DeleteWhereBuilder(Builder prefix, ClauseBuilder condition) {
     this.condition = condition;
     this.prefix = prefix;
   }
