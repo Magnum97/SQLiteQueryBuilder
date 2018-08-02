@@ -20,7 +20,7 @@ Although this project is written in Java and bears no dependencies to external f
 String sql = SQLiteQueryBuilder
 	.select("*")
 	.from("accounts")
-	.where("id = 1")
+	.where(clause("id = 1").and("color = 'red'"))
 	.toString();
 ```
 
@@ -36,6 +36,6 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.alexfu:SQLiteQueryBuilder:0.1.1'
+    implementation 'com.github.emmanuelmess:SQLiteQueryBuilder:0.3.0'
 }
 ```

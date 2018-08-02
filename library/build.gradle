@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+apply plugin: 'checkstyle'
+apply plugin: 'com.github.kt3k.coveralls'
+apply plugin: 'idea'
+
+group = 'com.github.alexfu'
+
+targetCompatibility = 1.7
+sourceCompatibility = 1.7
+version = '0.4.0'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.assertj:assertj-core:3.5.2'
+    testImplementation 'org.xerial:sqlite-jdbc:3.8.11.2'
+}
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 27
+        //consumerProguardFiles 'proguard-rules.txt' TODO use proguard
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
+}
+
+checkstyle {
+    toolVersion = '6.7'
+}
