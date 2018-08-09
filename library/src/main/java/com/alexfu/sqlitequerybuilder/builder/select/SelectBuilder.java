@@ -1,6 +1,7 @@
 package com.alexfu.sqlitequerybuilder.builder.select;
 
 import com.alexfu.sqlitequerybuilder.builder.SegmentBuilder;
+import com.alexfu.sqlitequerybuilder.builder.expressions.ExpressionCaseBuilder;
 import com.alexfu.sqlitequerybuilder.utils.Preconditions;
 
 public abstract class SelectBuilder extends SegmentBuilder {

@@ -1,6 +1,7 @@
 package com.alexfu.sqlitequerybuilder.builder.select;
 
 import com.alexfu.sqlitequerybuilder.builder.SegmentBuilder;
+import com.alexfu.sqlitequerybuilder.builder.expressions.CaseEndBuilder;
 import com.alexfu.sqlitequerybuilder.utils.Preconditions;
 import com.alexfu.sqlitequerybuilder.utils.StringUtils;
 
@@ -9,11 +10,18 @@ import java.util.Collections;
 
 public class SelectFunctionBuilder extends SegmentBuilder {
 
-	private SelectBuilder prefix;
+	private SegmentBuilder prefix;
 	private FunctionType function;
 	private String[] args;
 
-	SelectFunctionBuilder(SelectBuilder prefix, FunctionType function, String... args) {
+	public SelectFunctionBuilder(CaseEndBuilder prefix, FunctionType function, String... args) {
+		Preconditions.checkArgument(function.argumentNumber.contains(args.length), "Argument list too long or short!");
+		this.prefix = prefix;
+		this.function = function;
+		this.args = args.length != 0? args : new String[] {"*"};
+	}
+
+	public SelectFunctionBuilder(SelectBuilder prefix, FunctionType function, String... args) {
 		Preconditions.checkArgument(function.argumentNumber.contains(args.length), "Argument list too long or short!");
 		this.prefix = prefix;
 		this.function = function;
