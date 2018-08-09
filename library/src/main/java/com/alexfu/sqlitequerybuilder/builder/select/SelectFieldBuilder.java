@@ -12,6 +12,10 @@ public class SelectFieldBuilder extends SelectBuilder {
 
   @Override
   public String build() {
-    return StringUtils.join(" ", "SELECT", StringUtils.join(",", fields));
+    if(fields.length == 0) {
+      return "SELECT";
+    } else {
+      return StringUtils.join(" ", "SELECT", StringUtils.join(",", fields));
+    }
   }
 }

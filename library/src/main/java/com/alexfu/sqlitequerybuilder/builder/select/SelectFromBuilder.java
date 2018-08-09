@@ -11,7 +11,7 @@ public class SelectFromBuilder extends SegmentBuilder {
   private SegmentBuilder prefix;
   private String[] tables;
 
-  SelectFromBuilder(SegmentBuilder prefix, String... tables) {
+  public SelectFromBuilder(SegmentBuilder prefix, String... tables) {
     this.prefix = prefix;
     this.tables = tables;
   }

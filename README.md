@@ -18,7 +18,9 @@ Although this project is written in Java and bears no dependencies to external f
 ## Usage
 ```java
 String sql = SQLiteQueryBuilder
-	.select("*")
+	.select(caseExp()
+            .when("COUNT(col) > 10").then("SUM(col)")
+            .elseExp("NULL").end("column").build())
 	.from("accounts")
 	.where(clause("id = 1").and("color = 'red'"))
 	.toString();
