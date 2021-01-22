@@ -272,6 +272,33 @@ public class SelectTest {
     assertThat(query).isEqualTo("SELECT * FROM mytable ORDER BY age ASC");
   }
 
+  @Test
+  public void selectAndOrderByAsc() {
+    String query = SQLiteQueryBuilder
+            .select("*")
+            .from("mytable")
+            .where("id = 1")
+            .and("name = 'John Smith'")
+            .orderBy("age")
+            .asc()
+            .build();
+
+    assertThat(query).isEqualTo("SELECT * FROM mytable WHERE id = 1 AND name = 'John Smith' ORDER BY age ASC");
+  }
+
+  @Test
+  public void selectAndLimit() {
+    String query = SQLiteQueryBuilder
+            .select("*")
+            .from("mytable")
+            .where("id = 1")
+            .and("name = 'John Smith'")
+            .limit(10)
+            .build();
+
+    assertThat(query).isEqualTo("SELECT * FROM mytable WHERE id = 1 AND name = 'John Smith' LIMIT 10");
+  }
+
   @Test(expected = IllegalArgumentException.class)
   public void testNullArgs() {
     SQLiteQueryBuilder
